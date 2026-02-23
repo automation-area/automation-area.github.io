@@ -103,6 +103,21 @@ export default function JsonBulkEditor() {
     setBulkVal(""); // reset after 
   };
 
+  // Convert a whole column text to single line
+  const handleTransformToSingleLine = () => {
+    if (!selectedCol) return;
+
+    const newData = data.map(row => {
+      const val = row[selectedCol];
+      if (typeof val === "string") {
+        const converted = val.replace(/\n/g, "\\n").replace(/\r/g, "");
+        return { ...row, [selectedCol]: converted };
+      }
+      return row;
+    });
+    setData(newData);
+  };
+
   const getOutputText = () => {
     return JSON.stringify(data, null, 2);
   };
@@ -235,6 +250,15 @@ export default function JsonBulkEditor() {
                       </button>
                     </div>
                   </div>
+                  <div className="flex-grow max-w-xs flex items-end">
+                     <button 
+                        onClick={handleTransformToSingleLine}
+                        title="Convert multiline text in this column to single line (\\n)"
+                        className="px-4 py-1.5 text-sm font-bold bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 text-emerald-400 rounded-lg transition-colors whitespace-nowrap"
+                      >
+                        Convert to Single Line
+                      </button>
+                  </div>
                 </div>
 
                 {/* Spreadsheet Table */}
@@ -262,12 +286,12 @@ export default function JsonBulkEditor() {
                             const displayVal = val === null ? "null" : typeof val === "object" ? JSON.stringify(val) : String(val ?? "");
                             
                             return (
-                              <td key={col} className="border-r border-white/5 p-0 relative h-full">
-                                <input
-                                  type="text"
+                              <td key={col} className="border-r border-white/5 p-0 relative h-full align-top">
+                                <textarea
                                   value={displayVal}
                                   onChange={(e) => handleCellChange(rowIndex, col, e.target.value)}
-                                  className="w-full h-full min-h-[40px] px-4 py-2 bg-transparent text-slate-300 focus:bg-blue-900/20 focus:outline-none focus:text-white transition-colors"
+                                  className="w-full h-full min-h-[44px] px-3 py-2 bg-transparent text-slate-300 focus:bg-blue-900/20 focus:outline-none focus:text-white transition-colors custom-scrollbar resize-y"
+                                  rows={1}
                                 />
                               </td>
                             )

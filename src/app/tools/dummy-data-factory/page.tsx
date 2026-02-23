@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type FieldType = "firstName" | "lastName" | "fullName" | "email" | "phone" | "address" | "company" | "jobTitle" | "date" | "uuid" | "number" | "boolean";
 
@@ -58,6 +59,7 @@ const generateData = (type: FieldType): string | number | boolean => {
 };
 
 export default function DummyDataFactory() {
+  const router = useRouter();
   const [fields, setFields] = useState<Field[]>([
     { id: "1", name: "id", type: "uuid" },
     { id: "2", name: "name", type: "fullName" },
@@ -131,6 +133,16 @@ export default function DummyDataFactory() {
     a.download = `dummy-data.${format}`;
     a.click();
     URL.revokeObjectURL(url);
+  };
+
+  const jumpToBulkEditor = async () => {
+    if (!output) return;
+    try {
+      await navigator.clipboard.writeText(output);
+    } catch (err) {
+      console.error("Failed to copy text before jump", err);
+    }
+    router.push("/tools/json-bulk-editor");
   };
 
   return (
@@ -281,6 +293,17 @@ export default function DummyDataFactory() {
                 >
                   Download {format.toUpperCase()}
                 </button>
+                {format === "json" && output && (
+                  <button 
+                    onClick={jumpToBulkEditor}
+                    className="text-sm flex items-center gap-2 px-4 py-1.5 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30 hover:bg-blue-500/30 transition-colors"
+                  >
+                    Auto-Copy & Open in Bulk Editor
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </button>
+                )}
               </div>
             </div>
             <textarea
