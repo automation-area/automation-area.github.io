@@ -197,7 +197,7 @@ export default function JsonBulkEditor() {
                       : "bg-white/10 text-white hover:bg-white/20 border border-transparent disabled:opacity-50"
                   }`}
                 >
-                  {copied ? "Copied!" : "Copy JSON"}
+                  {copied ? "Copied!" : "Copy"}
                 </button>
               </div>
               <textarea

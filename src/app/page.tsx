@@ -18,7 +18,6 @@ export default function Home() {
           </div>
           <div className="hidden md:flex gap-8 text-sm font-medium text-slate-400">
             <a href="#tools" className="hover:text-white transition-colors">Tools</a>
-            <a href="#" className="hover:text-white transition-colors">Documentation</a>
           </div>
         </nav>
 
@@ -119,6 +118,52 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Category: Database & SQL */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-6">
+                <h3 className="text-xl font-semibold text-slate-200">🗄️ Database & SQL</h3>
+                <div className="h-px bg-white/10 flex-grow"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Link href="/tools/sql-in-formatter" className="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(244,63,94,0.5)]">
+                  <div className="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-rose-300 transition-colors">SQL IN Clause Formatter</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Instantly format Excel or text lists into SQL WHERE IN (&apos;...&apos;, &apos;...&apos;) query syntax.
+                  </p>
+                </Link>
+
+                <Link href="/tools/sql-bulk-inserter" className="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(59,130,246,0.5)]">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-300 transition-colors">SQL Bulk Inserter</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Instantly convert JSON arrays or CSV files into <code className="bg-white/10 px-1 py-0.5 rounded text-xs text-slate-300">INSERT INTO</code> script statements.
+                  </p>
+                </Link>
+
+                <Link href="/tools/sql-parameter-binder" className="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(245,158,11,0.5)]">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-amber-300 transition-colors">SQL Parameter Binder</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Convert <code className="bg-white/10 px-1 py-0.5 rounded text-xs text-slate-300">sp_executesql</code> profiler logs into raw, executable SQL queries by binding parameters.
+                  </p>
+                </Link>
+              </div>
+            </div>
+
             {/* Category: Security & Encoders */}
             <div>
               <div className="flex items-center gap-4 mb-6">
@@ -126,6 +171,19 @@ export default function Home() {
                 <div className="h-px bg-white/10 flex-grow"></div>
               </div>
               
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Link href="/tools/env-converter" className="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(217,70,239,0.5)]">
+                  <div className="w-12 h-12 rounded-xl bg-fuchsia-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-fuchsia-300 transition-colors">Config Converter</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Convert configurations seamlessly between <code className="bg-white/10 px-1 py-0.5 rounded text-xs text-slate-300">.env</code>, <code className="bg-white/10 px-1 py-0.5 rounded text-xs text-slate-300">JSON</code>, and <code className="bg-white/10 px-1 py-0.5 rounded text-xs text-slate-300">YAML</code> formats handling nested keys.
+                  </p>
+                </Link>
+              </div>
             </div>
           </div>
         </main>
