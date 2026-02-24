@@ -8,6 +8,9 @@ type Format = "env" | "json" | "yaml";
 
 export default function EnvConverter() {
   const [inputText, setInputText] = useState("");
+  const [inputFormat, setInputFormat] = useState<Format>("env");
+  const [outputFormat, setOutputFormat] = useState<Format>("json");
+  const [copied, setCopied] = useState(false);
   const { outputText, errorLine } = useMemo(() => {
     if (!inputText.trim()) {
       return { outputText: "", errorLine: null };
