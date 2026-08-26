@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Automation Area | Open Static Site",
+  title: {
+    default: "Automation Area | Open Static Site",
+    template: "%s | Automation Area",
+  },
   description: "A completely open static automation site built with Next.js and GitHub Pages.",
 };
 
