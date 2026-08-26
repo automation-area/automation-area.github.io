@@ -13,6 +13,11 @@ A collection of free, browser-only developer utility tools. Everything runs clie
 ### 📝 Text & Formats
 - **Multiline to Single** — convert multiline text into a single `\n`-escaped string
 - **JSON Bulk Editor** — view a JSON array as a spreadsheet, edit cells or bulk-replace columns
+- **JSON Formatter** — beautify (2/4-space, tab) or minify JSON into a single line, optional key sorting
+
+### ⏰ Time & Schedule
+- **Epoch/Timestamp Converter** — Unix timestamp ↔ KST/UTC dates with live clock and auto s/ms detection
+- **Cron Expression Parser** — parse, build, and explain cron expressions with next runs in KST and UTC
 
 ### 🗄️ Database & SQL
 - **SQL IN Clause Formatter** — turn Excel/text lists into `WHERE IN ('...', '...')` syntax
@@ -21,6 +26,8 @@ A collection of free, browser-only developer utility tools. Everything runs clie
 
 ### 🔐 Encoders & Security
 - **Config Converter** — convert between `.env`, JSON, and YAML with nested-key handling
+- **JWT Decoder** — decode header/payload locally with exp/iat/nbf expiry status in KST/UTC
+- **Base64 / URL Encoder** — encode/decode Base64 (UTF-8 safe) and URL strings
 
 ## Tech Stack
 

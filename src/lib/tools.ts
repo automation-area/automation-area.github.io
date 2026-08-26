@@ -19,6 +19,7 @@ export interface Tool {
 export const CATEGORIES = [
   "🏗️ Generators",
   "📝 Text & Formats",
+  "⏰ Time & Schedule",
   "🗄️ Database & SQL",
   "🔐 Encoders & Security",
 ] as const;
@@ -124,6 +125,69 @@ export const TOOLS: Tool[] = [
     iconColor: "text-fuchsia-400",
     hoverTitle: "group-hover:text-fuchsia-300",
     hoverShadow: "hover:shadow-[0_10px_30px_-15px_rgba(217,70,239,0.5)]",
+  },
+  {
+    slug: "json-formatter",
+    title: "JSON Formatter",
+    description:
+      "Beautify JSON with custom indentation or minify it into a single line, with optional key sorting.",
+    category: "📝 Text & Formats",
+    iconPath:
+      "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+    iconBg: "bg-indigo-500/20",
+    iconColor: "text-indigo-400",
+    hoverTitle: "group-hover:text-indigo-300",
+    hoverShadow: "hover:shadow-[0_10px_30px_-15px_rgba(99,102,241,0.5)]",
+  },
+  {
+    slug: "epoch-converter",
+    title: "Epoch/Timestamp Converter",
+    description:
+      "Convert Unix timestamps to KST/UTC dates and back, with live current time and relative view.",
+    category: "⏰ Time & Schedule",
+    iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+    iconBg: "bg-teal-500/20",
+    iconColor: "text-teal-400",
+    hoverTitle: "group-hover:text-teal-300",
+    hoverShadow: "hover:shadow-[0_10px_30px_-15px_rgba(20,184,166,0.5)]",
+  },
+  {
+    slug: "cron-parser",
+    title: "Cron Expression Parser",
+    description:
+      "Parse, build, and explain cron expressions with next run times in both KST and UTC.",
+    category: "⏰ Time & Schedule",
+    iconPath:
+      "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+    iconBg: "bg-violet-500/20",
+    iconColor: "text-violet-400",
+    hoverTitle: "group-hover:text-violet-300",
+    hoverShadow: "hover:shadow-[0_10px_30px_-15px_rgba(139,92,246,0.5)]",
+  },
+  {
+    slug: "jwt-decoder",
+    title: "JWT Decoder",
+    description:
+      "Decode JWT headers and payloads locally in your browser, with expiry (exp) status in KST/UTC.",
+    category: "🔐 Encoders & Security",
+    iconPath:
+      "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    iconBg: "bg-red-500/20",
+    iconColor: "text-red-400",
+    hoverTitle: "group-hover:text-red-300",
+    hoverShadow: "hover:shadow-[0_10px_30px_-15px_rgba(239,68,68,0.5)]",
+  },
+  {
+    slug: "base64-url",
+    title: "Base64 / URL Encoder",
+    description:
+      "Encode and decode Base64 (UTF-8 safe) and URL-encoded strings in one place.",
+    category: "🔐 Encoders & Security",
+    iconPath: "M7 20l4-16m2 16l4-16M6 9h14M4 15h14",
+    iconBg: "bg-sky-500/20",
+    iconColor: "text-sky-400",
+    hoverTitle: "group-hover:text-sky-300",
+    hoverShadow: "hover:shadow-[0_10px_30px_-15px_rgba(14,165,233,0.5)]",
   },
 ];
 
